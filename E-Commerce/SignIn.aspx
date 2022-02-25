@@ -1,5 +1,5 @@
-﻿
-<%@ Page Language="C#" AutoEventWireup="true"   %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SignIn.aspx.cs" Inherits="SignIn" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,7 +29,8 @@
                         <span class ="icon-bar"></span>
 
                     </button>
-c
+                    <a class ="navbar-brand" href ="Default.aspx" ><span ><img src="icons/safeIcons.png" alt="MyEShoppoing" height ="30" /></span>MyEShopping </a>
+
                 </div>
                 <div class ="navbar-collapse collapse">
                     <ul class ="nav navbar-nav navbar-right">
@@ -77,7 +78,7 @@ c
                     <div class ="col-md-3 ">
 
                         <asp:TextBox ID="txtUsername" CssClass="form-control" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorUserName" runat="server" CssClass ="text-danger " ErrorMessage="*Please Enter Username" ControlToValidate="txtUsername" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorUserName" runat="server" CssClass ="text-danger " ErrorMessage="*plz Enter Username" ControlToValidate="txtUsername" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -87,7 +88,7 @@ c
                     <div class ="col-md-3 ">
 
                         <asp:TextBox ID="txtPass" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorPass" CssClass ="text-danger " runat="server" ErrorMessage="*The password field is required" ControlToValidate="txtPass" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorPass" CssClass ="text-danger " runat="server" ErrorMessage="*the password field is required" ControlToValidate="txtPass" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -106,10 +107,7 @@ c
                     <div class ="col-md-2 "> </div>
                     <div class ="col-md-6 ">
 
-                       <asp:Button ID="btnLogin" CssClass ="btn btn-success " runat="server" Text="Login"  /> <br />
-                        
-                        <asp:SqlDataSource runat="server"></asp:SqlDataSource>
-
+                        <asp:Button ID="btnLogin" CssClass ="btn btn-success " runat="server" Text="Login&raquo;" OnClick="btnLogin_Click" />
                         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SignUp.aspx">Sign Up</asp:HyperLink>
                     </div>
                 </div>

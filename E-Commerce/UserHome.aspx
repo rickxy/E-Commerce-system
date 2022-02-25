@@ -40,7 +40,7 @@
                         <span class ="icon-bar"></span>
 
                     </button>
-                    <a class ="navbar-brand" href ="UserHome.aspx" ><span ><img src="icons/safeIcons.png" alt="MyEShoppoing" height ="30" /></span>MyEShopping </a>
+                    <a class ="navbar-brand" href ="UserHome.aspx" ><span ><img src="icons/safeIcons.png" alt="MyEShoppoing" height ="30" /></span>Ecommerce </a>
 
                 </div>
                 <div class ="navbar-collapse collapse">

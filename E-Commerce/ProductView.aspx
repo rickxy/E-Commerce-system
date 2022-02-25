@@ -68,7 +68,7 @@
                 <ItemTemplate>
             <div class="divDet1">
                  <h1 class="proNameView"><%# Eval("PName") %> </h1>
-                <span class="proOgPriceView">Rs.<%#Eval("PPrice","{0:c}") %></span> <span class="proPriceDiscountView"> Off Rs.<%# string.Format("{0}",Convert.ToInt64(Eval("PPrice"))-Convert.ToInt64(Eval("PSelPrice"))) %></span><p class="proPriceView">Rs. <%#Eval("PSelPrice","{0:c}") %></p>
+                <span class="proOgPriceView">$.<%#Eval("PPrice","{0}") %></span> <span class="proPriceDiscountView"> Off $.<%# string.Format("{0}",Convert.ToInt64(Eval("PPrice"))-Convert.ToInt64(Eval("PSelPrice"))) %></span><p class="proPriceView">$. <%#Eval("PSelPrice","{0}") %></p>
             </div>
             <div >
                 <h5 class="h5size"> SIZE</h5>

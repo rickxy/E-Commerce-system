@@ -1,14 +1,16 @@
-﻿
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title> E-Commerce</title>
-    <script src="http://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous">   </script>
+    <title>My E-Shopping Website</title>
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">   </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <link href="css/Custome.css" rel="stylesheet" />
+    <img src="icons/safeIcons.png" alt="" height="30" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -32,7 +34,9 @@
                         <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
                             class="icon-bar"></span><span class="icon-bar"></span>
                     </button>
-                          <a class ="navbar-brand" href ="Default.aspx" ><span ><img src="icons/safeIcons.png" alt="MyEShoppoing" height ="30" /></span>ECommerce </a>
+                    <a class="navbar-brand" href="Default.aspx"><span>
+                        <img src="icons/safeIcons.png" alt="MyEShoppoing" height="30" /></span>Ecommerce
+                    </a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -66,7 +70,8 @@
                         <li id="btnSignUP" runat="server"><a href="SignUp.aspx">SignUp</a> </li>
                         <li id="btnSignIN" runat="server"><a href="SignIn.aspx">SignIn</a> </li>
                         <li>
-                            
+                            <asp:Button ID="btnlogout" CssClass="btn btn-default navbar-btn " runat="server"
+                                Text="Sign Out" OnClick="btnlogout_Click" />
                         </li>
                     </ul>
                 </div>
@@ -75,18 +80,19 @@
         <!---image slider---->
         <div class="container">
             <h2>
-                Carousel Example</h2>
+                Our Shop</h2>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
                     <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
                 </ol>
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="ImgSlider/1.jpg" alt="Los Angeles" style="width: 100%;">
+                        <img src="ImgSlider/1.png" alt="Los Angeles" style="width: 100%;">
                         <div class="carousel-caption">
                             <h3>
                                 Women Shopping</h3>
@@ -106,7 +112,16 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="ImgSlider/3.png" alt="New york" style="width: 100%;">
+                        <img src="ImgSlider/3.jpg" alt="New york" style="width: 100%;">
+                        <div class="carousel-caption">
+                            <h3>
+                                On watches you can get</h3>
+                            <p>
+                                25% off</p>
+                        </div>
+                    </div>
+                     <div class="item">
+                        <img src="ImgSlider/4.png" alt="New york" style="width: 100%;">
                         <div class="carousel-caption">
                             <h3>
                                 On mobile you can get</h3>
@@ -140,9 +155,9 @@
                     <a class="btn btn-default " href="#" role="button">View More &raquo;</a></p>
             </div>
             <div class="col-lg-4">
-                <img class="img-circle " src="Images/Shoes.jpeg" alt="thumb" width="140" height="140" />
+                <img class="img-circle " src="Images/watch.jpg" alt="thumb" width="140" height="140" />
                 <h2>
-                    Footwear</h2>
+                    Watches</h2>
                 <p>
                     Featuring a 15.49-cm (6.1) all-screen Liquid Retina LCD and a glass and aluminum
                     design, the iPhone 11 is as beautiful as it gets. Also, the IP68 rating ensures
@@ -151,9 +166,9 @@
                     <a class="btn btn-default " href="#" role="button">View More &raquo;</a></p>
             </div>
             <div class="col-lg-4">
-                <img class="img-circle " src="Images/tshirt.jpeg" alt="thumb" width="140" height="140" />
+                <img class="img-circle " src="Images/headphones.jpg" alt="thumb" width="140" height="140" />
                 <h2>
-                    Clothings</h2>
+                    Headphones</h2>
                 <p>
                     Featuring a 15.49-cm (6.1) all-screen Liquid Retina LCD and a glass and aluminum
                     design, the iPhone 11 is as beautiful as it gets. Also, the IP68 rating ensures
@@ -165,7 +180,38 @@
         <div class="panel panel-primary">
             <div class="panel-heading">
                 BLACK FRIDAY DEAL</div>
-        
+            <div class="panel-body">
+                <div class="row" style="padding-top: 50px">
+                    <asp:Repeater ID="rptrProducts" runat="server">
+                        <ItemTemplate>
+                            <div class="col-sm-3 col-md-3">
+                                <a href="ProductView.aspx?PID=<%# Eval("PID") %>" style="text-decoration: none;">
+                                    <div class="thumbnail">
+                                        <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("ImageName") %><%# Eval("Extention") %>"
+                                            alt="<%# Eval("ImageName") %>" />
+                                        <div class="caption">
+                                            <div class="probrand">
+                                                <%# Eval ("BrandName") %>
+                                            </div>
+                                            <div class="proName">
+                                                <%# Eval ("PName") %>
+                                            </div>
+                                            <div class="proPrice">
+                                                <span class="proOgPrice">
+                                                    <%# Eval ("PPrice","{0:0,00}") %>
+                                                </span>
+                                                <%# Eval ("PSelPrice","{0}") %>
+                                                <span class="proPriceDiscount">(<%# Eval("DiscAmount","{0:0,00}") %>
+                                                    off) </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+            </div>
             <div class="panel-footer">
                 Buy 50 mobiles and get a gift card</div>
         </div>
@@ -179,7 +225,7 @@
                
                 <p class ="pull-right "><a href ="#">&nbsp; &nbsp; Back to top &nbsp; &nbsp;</a></p>
                 <p class ="pull-right "><a href="AdminHome.aspx"> Admin Login  </a></p>  
-                <p>&copy;2022  &middot; <a href ="Default.aspx">Home</a>&middot;<a href ="#">About</a>&middot;<a href ="#">Contact</a>&middot;<a href ="#">Products</a> </p>
+                <p>&copy;2022 &middot; <a href ="Default.aspx">Home</a>&middot;<a href ="#">About</a>&middot;<a href ="#">Contact</a>&middot;<a href ="#">Products</a> </p>
             </div>
 
         </footer>

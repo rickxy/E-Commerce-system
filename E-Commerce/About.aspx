@@ -1,6 +1,6 @@
-﻿<%--   <%@ Page Title="" Language="C#" MasterPageFile="~/User.master" AutoEventWireup="true" CodeFile="About.aspx.cs" Inherits="About" %> 
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.master" AutoEventWireup="true" CodeFile="About.aspx.cs" Inherits="About" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">    --%>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
 <title>About me Page</title>
   <meta charset="utf-8">
@@ -42,9 +42,9 @@
 
 // ]]>
     </script>
-<%-- </asp:Content>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    --%>
+
 <br />
 
 <div class="jumbotron text-center">
@@ -65,8 +65,8 @@
       <h4>Developer..</h4>      
       <p>I am geek at heart that loves to learn and play with new technologies. I am grounded with solid object oriented programming principles, but spread my wings across most of the Microsoft product stack: from ASP.NET MVC, WCF, Windows forms, Silverlight, Business Intelligence, PerformancePoint Services, VSTO to SharePoint.</p>
       <%--<button  id="btn11" runat="server" onclick="btn11_onclick()">Get in Touch</button>--%>
-      <%--  <asp:Button  class="btn btn-default btn-lg" ID="Button1" runat="server" 
-            Text="Get in Touch" onclick="Button1_Click" />  --%> 
+        <asp:Button  class="btn btn-default btn-lg" ID="Button1" runat="server" 
+            Text="Get in Touch" onclick="Button1_Click" />
 
     </div>
     <div class="col-sm-4">
@@ -133,7 +133,7 @@
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
-  <p> Made By <a href="" title="Visit ProTech"> ProTech</a></p>
+  <p> Made By <a href="#" title="Visit schools">ProTech</a></p>
 </footer>
 
 </asp:Content>

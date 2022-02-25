@@ -1,4 +1,4 @@
-﻿  <%@ Page Language="C#" AutoEventWireup="true"   %>  
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SignUp.aspx.cs" Inherits="SignUp" %>
 
 <!DOCTYPE html>
 
@@ -28,7 +28,7 @@
                         <span class ="icon-bar"></span>
 
                     </button>
-                    <a class ="navbar-brand" href ="Default.aspx" ><span ><img src="icons/safeIcons.png" alt="MyEShoppoing" height ="30" /></span>ECommerce </a>
+                    <a class ="navbar-brand" href ="Default.aspx" ><span ><img src="icons/safeIcons.png" alt="MyEShoppoing" height ="30" /></span>MyEShopping </a>
 
                 </div>
                 <div class ="navbar-collapse collapse">
@@ -103,9 +103,8 @@
             </div>
             <label class="col-xs-11"></label>
              <div class="col-xs-11">
-                  <asp:Button ID="txtsignup" Class="btn btn-success" runat="server" Text="SignUP"  /> 
-                 <br />
-            &nbsp;<asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
+                 <asp:Button ID="txtsignup" Class="btn btn-success" runat="server" Text="SignUP" OnClick="txtsignup_Click" />
+            &nbsp;<asp:Label ID="lblMsg" runat="server" Text="Label"></asp:Label>
             </div>
         </div>
          <!---signup page end--->

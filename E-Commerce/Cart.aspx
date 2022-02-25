@@ -39,10 +39,10 @@
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading proNameViewCart"><%# Eval("PName") %></h4>
-                                            <span class="ProPriceViewCart">Rs.&nbsp <%# Eval("PSelPrice","{0:0.00}") %></span>
-                                            <span class="proOgPriceView">Rs.&nbsp <%# Eval("PPrice","{0:0.00}") %></span>
+                                            <span class="ProPriceViewCart">$. <%# Eval("PSelPrice","{0:0.00}") %></span>
+                                            <span class="proOgPriceView">$. <%# Eval("PPrice","{0:0.00}") %></span>
 
-                                            <span class="proPriceDiscountView"> Off Rs.<%# string.Format("{0}",Convert.ToInt64(Eval("PPrice"))-Convert.ToInt64(Eval("PSelPrice"))) %></span>
+                                            <span class="proPriceDiscountView"> Off $.<%# string.Format("{0}",Convert.ToInt64(Eval("PPrice"))-Convert.ToInt64(Eval("PSelPrice"))) %></span>
                                             <div class="pull-right form-inline">
                                                 <asp:Label ID="lblQty" runat="server" Text="Qty:" Font-Size="Large"></asp:Label>
                                                 <asp:Button ID="BtnMinus" CommandArgument='<%# Eval("PID") %>' CommandName="DoMinus" Font-Size="Large" runat="server" Text="-" />&nbsp
@@ -53,7 +53,7 @@
                                             <p>
                                                 <asp:Button CommandArgument='<%#Eval("CartID") %>' CommandName="RemoveThisCart" ID="btnRemoveCart" CssClass="RemoveButton1" runat="server" Text="Remove" />
                                                 <br />
-                                                <span class="proNameViewCart pull-right">SubTotal: Rs.&nbsp <%# Eval("SubSAmount","{0:0.00}") %></span>
+                                                <span class="proNameViewCart pull-right">SubTotal: $. <%# Eval("SubSAmount","{0:0.00}") %></span>
                                             </p>
                                         </div>
                                     </div>
